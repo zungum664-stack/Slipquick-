@@ -3,28 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SlipQuick – Instant Receipt & Quote Maker</title>
+  <title>SlipQuick – Instant WhatsApp Receipt & Quote Maker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>SlipQuick</h1>
-    <p class="subtitle">Create a clean receipt or quote in 10 seconds</p>
+    <!-- Catchy Hero Header with Custom Receipt Logo Graphic -->
+    <header class="hero">
+      <div class="logo-badge">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 2v20l3-2 3 2 2-2 2 2 3-2 3 2V2l-3 2-3-2-2 2-2-2-3 2-3-2z"/>
+          <path d="M8 8h8"/>
+          <path d="M8 12h6"/>
+          <path d="M9 16l2 2 4-4"/>
+        </svg>
+      </div>
+      <h1>SlipQuick</h1>
+      <p class="subtitle">Professional WhatsApp receipts & quotes in 10 seconds.</p>
 
+      <!-- Trust Badges -->
+      <div class="trust-row">
+        <span class="trust-pill">🔒 100% Private</span>
+        <span class="trust-pill">⚡ Instant Slip</span>
+        <span class="trust-pill">✅ Free Tool</span>
+      </div>
+    </header>
+
+    <!-- Main Form Card -->
     <div class="card">
-      <label>Document Type</label>
-      <select id="docType">
-        <option value="RECEIPT">Receipt (Paid)</option>
-        <option value="QUOTE">Quote (Estimate)</option>
-      </select>
-
-      <label>Currency</label>
-      <select id="currency">
-        <option value="R">R (ZAR)</option>
-        <option value="$">$ (USD)</option>
-        <option value="£">£ (GBP)</option>
-        <option value="€">€ (EUR)</option>
-      </select>
+      <div class="row-2">
+        <div>
+          <label>Document Type</label>
+          <select id="docType">
+            <option value="RECEIPT">Receipt (Paid)</option>
+            <option value="QUOTE">Quote (Estimate)</option>
+          </select>
+        </div>
+        <div>
+          <label>Currency</label>
+          <select id="currency">
+            <option value="R">R (ZAR)</option>
+            <option value="$">$ (USD)</option>
+            <option value="£">£ (GBP)</option>
+            <option value="€">€ (EUR)</option>
+          </select>
+        </div>
+      </div>
 
       <label>Your Business / Seller Name</label>
       <input type="text" id="businessName" placeholder="e.g. Mvelo Kicks" />
@@ -38,11 +62,16 @@
       <label>Amount</label>
       <input type="number" id="amount" placeholder="e.g. 1500" />
 
-      <button id="generateBtn">Create Slip</button>
+      <button id="generateBtn">✨ Generate Official Slip</button>
     </div>
 
-    <div id="slipPreview" class="slip hidden"></div>
-    <button id="copyBtn" class="secondary-btn hidden">Copy for WhatsApp</button>
+    <!-- Visual Receipt Preview Card -->
+    <div id="slipPreview" class="slip-card hidden"></div>
+    <button id="copyBtn" class="whatsapp-btn hidden">📲 Copy & Send on WhatsApp</button>
+
+    <footer class="footer-note">
+      🛡️ Your business details stay safely on your device. No account needed.
+    </footer>
   </div>
 
   <script src="app.js"></script>
