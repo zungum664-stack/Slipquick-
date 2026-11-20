@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlipQuick – Business Sales, Buyer Counter & Receipt Maker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Header -->
+    <header class="hero">
+      <div class="logo-badge">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 2v20l3-2 3 2 2-2 2 2 3-2 3 2V2l-3 2-3-2-2 2-2-2-3 2-3-2z"/>
+          <path d="M8 8h8"/>
+          <path d="M8 12h6"/>
+          <path d="M9 16l2 2 4-4"/>
+        </svg>
+      </div>
+      <h1 id="headerBusinessTitle">SlipQuick Business</h1>
+      <p class="subtitle">Track buyers, count total sales & send instant slips</p>
+    </header>
+
+    <!-- Live Business Dashboard (Auto-calculates Buyers & Sales) -->
+    <section class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-label">Total Buyers</span>
+        <span class="stat-value" id="totalBuyers">0</span>
+      </div>
+      <div class="stat-box highlight">
+        <span class="stat-label">Total Sales</span>
+        <span class="stat-value" id="totalSales">R0.00</span>
+      </div>
+    </section>
+
+    <!-- Create Slip & Log Sale Card -->
+    <div class="card">
+      <div class="row-2">
+        <div>
+          <label>Status</label>
+          <select id="docType">
+            <option value="RECEIPT">Paid Sale (Receipt)</option>
+            <option value="QUOTE">Unpaid Quote</option>
+          </select>
+        </div>
+        <div>
+          <label>Currency</label>
+          <select id="currency">
+            <option value="R">R (ZAR)</option>
+            <option value="$">$ (USD)</option>
+            <option value="£">£ (GBP)</option>
+            <option value="€">€ (EUR)</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Your Business Name</label>
+      <input type="text" id="businessName" placeholder="e.g. Mvelo Kicks" />
+
+      <label>Buyer Name</label>
+      <input type="text" id="customerName" placeholder="e.g. Thabo" />
+
+      <div class="row-2">
+        <div>
+          <label>Item / Service</label>
+          <input type="text" id="itemName" placeholder="e.g. Sneakers" />
+        </div>
+        <div>
+          <label>Qty</label>
+          <input type="number" id="qty" value="1" min="1" />
+        </div>
+      </div>
+
+      <label>Price Per Item</label>
+      <input type="number" id="amount" placeholder="e.g. 1500" />
+
+      <button id="generateBtn">✅ Record Sale & Create Slip</button>
+    </div>
+
+    <!-- Generated Receipt Preview -->
+    <div id="slipPreview" class="slip-card hidden"></div>
+    <button id="copyBtn" class="whatsapp-btn hidden">📲 Copy Slip for WhatsApp</button>
+
+    <!-- Business Buyer & Sales History -->
+    <section class="history-section">
+      <div class="history-header">
+        <h2>Recent Buyers & Orders</h2>
+        <button id="clearHistoryBtn" class="text-btn">Reset</button>
+      </div>
+      <div id="salesList" class="sales-list">
+        <p class="empty-msg">No buyers recorded yet. Create your first paid slip above!</p>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      🛡️ Linked to your browser storage — all buyer totals stay saved on your phone.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
